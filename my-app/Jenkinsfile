@@ -10,12 +10,12 @@ pipeline {
         stage('Initialize'){
             steps{
                 echo "PATH = ${M2_HOME}/bin:${PATH}"
-                echo "M2_HOME = /opt/maven"
+                echo "M2_HOME = C:\Program Files\Maven\apache-maven-3.9.0"
             }
         }
         stage('Build') {
             steps {
-                dir("/var/lib/jenkins/workspace/New_demo/my-app/") {
+                dir("C:/ProgramData/Jenkins/.jenkins/workspace/Maven_pipeline/my-app/") {
                 sh 'mvn -B -DskipTests clean package'
                 }
             
